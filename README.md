@@ -16,8 +16,8 @@ The images were taken with a voxel size of X= 3.0013nm, Y = 3.0013nm, Z=10nm.
 
 ## Fiji/ImageJ installation
 The macros here require the installation of FIJI/ImageJ software and the Trainable WEKA Segemntation plugin.
-https://github.com/fiji
-https://github.com/fiji/Trainable_Segmentation
+- https://github.com/fiji
+- https://github.com/fiji/Trainable_Segmentation
 
 The associated research paper used the windows Fiji Version 1.53t.
 The macro code here requires the following update sites to be added:
