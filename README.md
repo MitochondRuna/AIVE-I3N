@@ -14,6 +14,17 @@ The original publications for the AIVE pipeline development can be found: ___
 This analysis pipeline was conducted on a 3D volumetric image stack of a cultured neuronal cell axon bouton. The image was aquired using a ___ 
 The images were taken with a voxel size of X= 3.0013nm, Y = 3.0013nm, Z=10nm.
 
+## Fiji/ImageJ installation
+The macros here require the installation of FIJI/ImageJ software and the Trainable WEKA Segemntation plugin.
+https://github.com/fiji
+https://github.com/fiji/Trainable_Segmentation
+
+The associated research paper used the windows Fiji Version 1.53t.
+The macro code here requires the following update sites to be added:
+- ImageScience
+- ImageJ
+- Fiji
+- Java-8
 
 ## Hierachy of ImageJ macro structure
 
