@@ -7,14 +7,14 @@ macro "LPNF [F9]"{
 
 // open file
    open(OriginalImage);
-   selectImage(OriginalImage);
-   ImageName = getTitle();
+   //selectImage(OriginalImage);
+   ImageName = File.getNameWithoutExtension(OriginalImage);
 
 // process file
    run("Duplicate...", "title=Gaussian.tif duplicate");
    run("Gaussian Blur 3D...", "x=1 y=1 z=0.33");
 
-   imageCalculator("Average create stack", "Original.tif","Gaussian.tif");
+   imageCalculator("Average create stack", ImageName+".tif","Gaussian.tif");
    selectImage("Result of "+ImageName+".tif");
 
 //save and close
