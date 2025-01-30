@@ -1,13 +1,14 @@
 /* This macro allows you to preset a 3D bounding box to crop an image
  * It will then allow you to set a directory to save the cropped image
  * It should be compatible with earlier versions of Fiji but was only tested in v1.53
- * 
+ *
  * Last updated: Aug 2024 by R. Lindblom
  */
 
 macro "Choose_3DImageCropper [F9]"{
 
-   requires("1.53s"); 
+   requires("1.53s");
+   setOption("JFileChooser", true);
 
 if (nImages == 0) {
 	run("Open...");
@@ -34,13 +35,13 @@ Dialog.show();
 Start_X = Dialog.getNumber();
 Start_Y = Dialog.getNumber();
 Start_Z = Dialog.getNumber();
-Length_X = Dialog.getNumber(); 
+Length_X = Dialog.getNumber();
 Length_Y = Dialog.getNumber();
 Length_Z = Dialog.getNumber();
 GetDir = Dialog.getCheckbox();
 ConfirmBox = Dialog.getCheckbox();
 
-if (GetDir == true) 
+if (GetDir == true)
 OutDir = getDirectory("Directory to save outputs");
 
 if (GetDir == false)
@@ -64,8 +65,8 @@ run("Crop");
 rename(imageTitle+"_cropped.tif");
 CroppedImageName = getTitle();
 
-if (GetDir == true) 
+if (GetDir == true)
 saveAs("TIFF", OutDir+CroppedImageName+".tif");
 
 
-}   
+}

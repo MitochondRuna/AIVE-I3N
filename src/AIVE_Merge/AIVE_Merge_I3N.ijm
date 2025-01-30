@@ -17,6 +17,7 @@
 macro "AIVE_Merge_I3N [F9]"{
 
    requires("1.53t");
+   setOption("JFileChooser", true);
    CLAHEFilePath = File.openDialog("Select CLAHE Inverse image");
    MEMBFilePath2 = File.openDialog("Select 32-bit Membrane prediction image");
    COMBROIFilePath3 = File.openDialog("Select the combined binary segmentation mask");

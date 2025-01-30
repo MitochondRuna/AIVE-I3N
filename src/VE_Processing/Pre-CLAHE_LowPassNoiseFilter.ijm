@@ -1,6 +1,8 @@
 macro "LPNF [F9]"{
 
    requires("1.53t");
+   setOption("JFileChooser", true);
+   
 // set image and output directory
    OriginalImage = File.openDialog("Select the FIB-SEM working image");
    outdir = getDirectory("Output Directory");
