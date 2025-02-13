@@ -4,11 +4,18 @@ The following macros were developed to run in FIJI ImageJ software version 1.53t
 
 The macros can be opened directly in ImageJ and run, or added to the macros folder in your local copy of ImageJ.
 
-These macros comprise the complete code set used in the analysis component of the FIB-SEM images published in ___
+The code here represents the adapted version of the AIVE analysis pipeline developed specifically to work with our i3n neuronal FIB-SEM dataset.
+These macros comprise the code used in the analysis component of the FIB-SEM images for our pre-print at:
+DOI: https://doi.org/10.1101/2024.09.09.611943 
+
 The full protocol for working with this specific dataset and its 3D reconstruction can be found at: ___
-This process can be adapted to work with other datasets, although optimisation for each individual dataset is recommended.
-This analysis pipeline is an adapted version of AIVE dveeloped to work specifically with this neuronal FIB-SEM dataset.
+
 The original publications for the AIVE pipeline development can be found: ___
+
+The primary AIVE code can be found in the main AIVE repo at: 
+https://github.com/BenPadman/AIVE
+
+This process can be adapted to work with other datasets, although optimisation for each individual dataset is recommended.
 
 ## Introduction
 This analysis pipeline was conducted on a 3D volumetric image stack of a cultured neuronal cell axon bouton. The image was aquired using a ___ 
