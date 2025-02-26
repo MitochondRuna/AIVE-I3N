@@ -98,18 +98,18 @@ public class AIVE_I3N implements PlugIn, ActionListener
            openTxt(AIVEInfo.get(name));
           }
           if (AIVEMacros.containsKey(name)==true) {
-            runMacros(AIVEInfo.get(name));
+            runMacros(AIVEMacros.get(name));
           }
          
     }
 
     public void runMacros(String name) {
          IJ.log(macroPath + name);
-         IJ.runMacro(name);
+         IJ.runMacroFile(macroPath + name);
     }
 
     public void openTxt(String name) {
-     IJ.open(name);
+     IJ.open(macroPath + name);
     }
 
 
@@ -129,9 +129,9 @@ public class AIVE_I3N implements PlugIn, ActionListener
 	     //Add buttons
 	         JPanel newPanel = MakePanel();
 
-		    mainframe.add(newPanel,BorderLayout.CENTER);
-              mainframe.pack();
-		    mainframe.setVisible(true);
+		     mainframe.add(newPanel,BorderLayout.CENTER);
+         mainframe.pack();
+		     mainframe.setVisible(true);
 
 	   }
    }
