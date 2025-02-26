@@ -27,11 +27,23 @@ The macros here require the installation of FIJI/ImageJ software and the Trainab
 - https://github.com/fiji/Trainable_Segmentation
 
 The associated research paper used the windows Fiji Version 1.53t.
-The macro code here requires the following update sites to be added:
+The plugin's macro code also requires the following update sites to be added to your version of FIJI/imageJ:
 - ImageScience
 - ImageJ
 - Fiji
 - Java-8
+
+## Plugin installation
+Once you have your FIJI installation set up with the above dependencies the plugin can be installed.
+
+Currently, the best way to install the plugin is to download the entire "AIVEI3N" folder from this repo, and paste it directly into the plugins folder in your FIJI/imageJ application. 
+The plugins folder should then contain a sub folder named "AIVEI3N" which contains the current version of the .jar file, as well as the macro code in the "Macros" subfolder.
+
+This open folder structure will allow you to make changes directly to the macros, if needed during optimisation, without needing to recompile the .jar.
+
+The AIVEI3N plugin also contains a button to link back to the main AIVE control panel window. You will need to install this plugin from the repo at https://github.com/BenPadman/AIVE for this to work properly.
+
+In the near future, we will look at getting a proper update site and potentially automating the dependencies.
 
 ## Hierachy of ImageJ macro structure
 
