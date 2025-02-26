@@ -15,8 +15,8 @@ public class AIVE_I3N implements PlugIn, ActionListener
    String macroPath; 
 
    static JButton b1;
-   static JLabel mLab;
-   static JPanel aivepan;
+   static JLabel mLab, mLab1;
+   static JPanel aivepan, aivepan1;
 
    public JPanel MakePanel()
    {
@@ -77,7 +77,29 @@ public class AIVE_I3N implements PlugIn, ActionListener
    	   return aivepan;
    }
 
+   public JPanel makePanel1()
+   {
+   	  JPanel aivepan1 = new JPanel(new GridBagLayout());
 
+       GridBagConstraints c = new GridBagConstraints();
+       c.fill = GridBagConstraints.HORIZONTAL;
+       c.anchor = GridBagConstraints.PAGE_START;
+       c.weightx = 0.5;
+       c.insets = new Insets(5,5,5,5);
+   
+       c.gridx=0; c.gridy=8; c.gridwidth=3;
+       aivepan1.add(mLab1 = new JLabel("Go to the main AIVE window:",JLabel.CENTER ),c);
+       mLab1.setBorder(BorderFactory.createLineBorder(Color.BLACK , 2));
+
+       JButton acp1 = new JButton("AIVE Control Panel");
+       acp1.addActionListener(this);
+       c.gridx=0; c.gridy=9;
+       aivepan1.add(acp1,c);
+
+       aivepan1.setBackground(Color.decode("#8ac7a3"));
+
+       return aivepan1;
+    }
 
    public void actionPerformed(ActionEvent e)
    {
@@ -128,8 +150,10 @@ public class AIVE_I3N implements PlugIn, ActionListener
 
 	     //Add buttons
 	         JPanel newPanel = MakePanel();
+           JPanel newPanel1 = makePanel1();
 
 		     mainframe.add(newPanel,BorderLayout.CENTER);
+         mainframe.add(newPanel1,BorderLayout.SOUTH);
          mainframe.pack();
 		     mainframe.setVisible(true);
 
