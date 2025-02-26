@@ -1,0 +1,21 @@
+This plugin contains the AIVE image processing macros specific to the I3N project.
+
+// Split Core B Macro
+The Split Core B button runs a macro that automatically detects and splits
+the output of the AIVE Core B macro into classes. This is useful for training
+the machine learning model to detect membranes.
+
+// CLAHE PreFilter Macro
+The CLAHE PreFilter performs a light noise reduction strategy across the FIB-SEM
+image stack prior to the CLAHE macro. This can help reduce the impact of noise 
+during the CLAHE adjustment.
+
+// AIVE I3N merge Macro
+The AIVE I3N merge is different from the original AIVE merge.
+This macro requires 4 inputs to run:
+
+- The Membrane prediction output from the Core B macro, or equivalent model result
+- The "Source" image, which has been PreFiltered and run through the 3D CLAHE
+- The binary object/class split results from AIVE Macro 1,
+    (as a folder of individual binary tif stacks per object)
+- The combined binary result of all objects as a single tif image stack
