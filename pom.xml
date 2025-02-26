@@ -13,7 +13,7 @@
 	</parent>
 
 	<groupId>AIVE_I3N</groupId>        
-	<artifactId>AIVE_I3n</artifactId> 
+	<artifactId>AIVE_I3N</artifactId> 
 	<version>1.0.0</version>
 
 	<name>AIVE i3N</name>
@@ -74,7 +74,7 @@
 
 	<properties>
 		<package-name>AIVE_I3N</package-name>  
-		<main-class>AIVEI3N_</main-class>       
+		<main-class>AIVE_I3N</main-class>       
 		<license.licenseName>cc0</license.licenseName>                   
 		<license.copyrightOwners>AIVE</license.copyrightOwners> 
 		<imagej.app.directory>/Applications/Fiji.app/Contents/MacOS/</imagej.app.directory>
