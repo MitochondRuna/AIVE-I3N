@@ -107,6 +107,7 @@ public class AIVE_I3N implements PlugIn, ActionListener
 
          HashMap<String, String> AIVEMacros = new HashMap<String, String>();
          HashMap<String, String> AIVEInfo = new HashMap<String, String>();
+         HashMap<String, String> AIVECP = new HashMap<String, String>();
 
         //Separate input values by command type
          AIVEInfo.put("Info", "AIVEI3NInfo.txt");
@@ -115,6 +116,8 @@ public class AIVE_I3N implements PlugIn, ActionListener
          AIVEMacros.put("CLAHE PreFilter", "VE-Processing/Pre-CLAHE-LowPassNoiseFilter.ijm");
          AIVEMacros.put("I3N Merge", "AIVE-Merge/AIVE-Merge-I3N.ijm");
          AIVEMacros.put("Enable", "JFileMacOS.ijm");
+
+         AIVECP.put("AIVE Control Panel", "AIVE ");
   
           if (AIVEInfo.containsKey(name)==true) {
            openTxt(AIVEInfo.get(name));
@@ -122,6 +125,9 @@ public class AIVE_I3N implements PlugIn, ActionListener
           if (AIVEMacros.containsKey(name)==true) {
             runMacros(AIVEMacros.get(name));
           }
+          if (AIVECP.containsKey(name)==true) {
+            IJ.run(AIVECP.get(name));
+       }
          
     }
 
