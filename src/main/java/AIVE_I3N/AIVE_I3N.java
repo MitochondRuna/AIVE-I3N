@@ -12,7 +12,7 @@ public class AIVE_I3N implements PlugIn, ActionListener
 {
 
    //init variables
-   String macroPath; 
+   String pluginPath, macroPath; 
 
    static JButton b1;
    static JLabel mLab, mLab1;
@@ -143,7 +143,8 @@ public class AIVE_I3N implements PlugIn, ActionListener
 
    public void run(String arg)
    {
-       macroPath = System.getProperty("user.dir") + "/plugins/AIVEI3N/Macros/";
+    pluginPath = ij.Menus.getPlugInsPath(); 
+    macroPath = (pluginPath + "AIVEI3N/Macros/");
 
 	   if (arg.equals("") || arg.equals("run"))
 	   {
