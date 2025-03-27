@@ -13,7 +13,7 @@ public class AIVE_I3N implements PlugIn, ActionListener
 {
    //init variables
    String pluginPath, macroPath;
-   String newDir = null; 
+   String newDir = null;
    Boolean testPath, testPath1;
 
    static JButton b1;
@@ -58,7 +58,7 @@ public class AIVE_I3N implements PlugIn, ActionListener
        aivepan.add(bAM4,c);
 
 
-       c.gridx=0; c.gridy=5; 
+       c.gridx=0; c.gridy=5;
        aivepan.add(new JLabel("AIVE merge: ",JLabel.CENTER ),c);
        c.gridwidth=1;
 
@@ -89,7 +89,7 @@ public class AIVE_I3N implements PlugIn, ActionListener
        c.anchor = GridBagConstraints.PAGE_START;
        c.weightx = 0.5;
        c.insets = new Insets(5,5,5,5);
-   
+
        c.gridx=0; c.gridy=8; c.gridwidth=3;
        aivepan1.add(mLab1 = new JLabel("Go to the main AIVE window:",JLabel.CENTER ),c);
        mLab1.setBorder(BorderFactory.createLineBorder(Color.BLACK , 2));
@@ -126,7 +126,7 @@ public class AIVE_I3N implements PlugIn, ActionListener
 
          AIVECP.put("AIVE Control Panel", "AIVE ");
 
-  
+
           if (AIVEInfo.containsKey(name)==true) {
            openTxt(AIVEInfo.get(name));
           }
@@ -174,11 +174,11 @@ public class AIVE_I3N implements PlugIn, ActionListener
             mainframe.setPreferredSize(new Dimension(330,300));
             mainframe.setLayout(new BorderLayout());
             mainframe.setResizable(true);
- 
+
         //Add buttons
             JPanel newPanel = MakePanel();
             JPanel newPanel1 = makePanel1();
- 
+
           mainframe.add(newPanel,BorderLayout.CENTER);
           mainframe.add(newPanel1,BorderLayout.SOUTH);
           mainframe.pack();
@@ -194,63 +194,63 @@ public class AIVE_I3N implements PlugIn, ActionListener
               accframe.setResizable(true);
 
               JPanel newPanel = setDirPane();
-              
+
               accframe.add(newPanel,BorderLayout.CENTER);
               accframe.pack();
               accframe.setVisible(true);
-    
+
     }
 
     public JPanel setDirPane()
     {
           JPanel accpan1 = new JPanel(new GridBagLayout());
- 
+
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.HORIZONTAL;
         c.anchor = GridBagConstraints.PAGE_START;
         c.weightx = 0.5;
         c.insets = new Insets(5,5,5,5);
-    
+
         c.gridx=0; c.gridy=0;
         accpan1.add(mLab = new JLabel("Change plugin folder path",JLabel.CENTER ),c);
         mLab.setBorder(BorderFactory.createLineBorder(Color.BLACK , 2));
-        c.gridx=0; c.gridy=1; 
+        c.gridx=0; c.gridy=1;
         accpan1.add(mLab1 = new JLabel("The default path expects the associated macros at: ",JLabel.CENTER ),c);
 
-        c.gridx=0; c.gridy=2; 
+        c.gridx=0; c.gridy=2;
         accpan1.add(mLab2 = new JLabel("path: "+pluginPath+"AIVEI3N/Macros/",JLabel.CENTER ),c);
 
-        c.gridx=0; c.gridy=3; 
+        c.gridx=0; c.gridy=3;
         accpan1.add(mLab3 = new JLabel("Ensure the macros folders matches the default",JLabel.CENTER ),c);
-        
-        c.gridx=0; c.gridy=4; 
+
+        c.gridx=0; c.gridy=4;
         accpan1.add(mLab4 = new JLabel("or, temporarily set an alternative path below",JLabel.CENTER ),c);
- 
+
         JButton acpA = new JButton("Change Macros Dir");
         acpA.addActionListener(this);
         c.gridx=0; c.gridy=5;
         accpan1.add(acpA,c);
- 
+
         accpan1.setBackground(Color.decode("#8ac7a3"));
- 
+
         return accpan1;
      }
 
    public void run(String arg)
     {
-        pluginPath = ij.Menus.getPlugInsPath(); 
-        
+        pluginPath = ij.Menus.getPlugInsPath();
+
         IJ.log("Checking expected macro path: "+pluginPath+"AIVEI3N/Macros/");
 
         try {
           testPath = new File(pluginPath+"AIVEI3N/Macros/").exists();
           if (testPath == true) {
           macroPath = (pluginPath + "AIVEI3N/Macros/");
-          
+
           if (arg.equals("") || arg.equals("run")){
             mainFrame(macroPath);
             }
-  
+
           } else {
           IJ.log("Expected path not found");
           }
@@ -266,5 +266,3 @@ public class AIVE_I3N implements PlugIn, ActionListener
 
 
 }
-
-
