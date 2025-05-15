@@ -11,7 +11,7 @@
 
 macro "Split CoreB Channels" {
 	
-	requires("1.53t");
+	requires("1.53p");
 	setBatchMode(true);
 
 // Set directories
@@ -63,5 +63,6 @@ macro "Split CoreB Channels" {
 			}
 
      	run("Close All");
+     	print("Done");
  	}
 }
