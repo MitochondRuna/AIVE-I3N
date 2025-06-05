@@ -14,7 +14,7 @@
 
 	<groupId>AIVE_I3N</groupId>        
 	<artifactId>AIVE_I3N</artifactId> 
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 
 	<name>AIVE i3N</name>
 	<description>AIVE for I3Neurons.</description> 
@@ -33,6 +33,7 @@
 	</licenses>
 
 	<developers>
+		<!-- See https://imagej.net/Team -->
 		<developer>
 			<id>mitochondruna</id>                              
 			<name>Runa Lindblom</name> 
@@ -98,6 +99,12 @@
             <version>3.3.1</version>
             <type>pom</type>
         </dependency>
+
+		<dependency>
+		    <groupId>sc.fiji</groupId>
+			<artifactId>imagescience</artifactId>
+			<version>3.0.0</version>
+		</dependency>	
 
 		<dependency>
 			<groupId>net.imagej</groupId>
