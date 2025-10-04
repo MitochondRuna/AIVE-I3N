@@ -8,17 +8,23 @@ The code here represents the adapted version of the AIVE analysis pipeline devel
 These macros comprise the code used in the analysis component of the FIB-SEM images for our pre-print at:
 DOI: https://doi.org/10.1101/2024.09.09.611943 
 
-The full protocol for working with this specific dataset and its 3D reconstruction can be found at: ___
+The full protocol for working with this specific dataset and its 3D reconstruction can be found at: [TBA]
 
-The original publications for the AIVE pipeline development can be found: ___
+More information about AIVE and it's applications can be found in the previous publications:
+
+"AI-directed voxel extraction and volume EM identify intrusions as sites of mitochondrial contact" (doi.org/10.1083/jcb.202411138)
+"ATG4 family proteins drive phagophore growth independently of the LC3/GABARAP lipidation system" (doi.prg/10.1016/j.molcel.2021.03.001 )
 
 The primary AIVE code can be found in the main AIVE repo at: 
 https://github.com/BenPadman/AIVE
 
+The primary AIVE plugin can be found in the main AIVE repo at:
+https://github.com/BenPadman/AIVE/tree/FIJI-plugin
+
 This process can be adapted to work with other datasets, although optimisation for each individual dataset is recommended.
 
 ## Introduction
-This analysis pipeline was conducted on a 3D volumetric image stack of a cultured neuronal cell axon bouton. The image was aquired using a ___ 
+This analysis pipeline was conducted on a 3D volumetric image stack of a cultured neuronal cell axon bouton. The image was aquired using a Helios 5 UX Cryo-FIBSEM. 
 The images were taken with a voxel size of X= 3.0013nm, Y = 3.0013nm, Z=10nm.
 
 ## Fiji/ImageJ installation
@@ -41,14 +47,14 @@ The plugins folder should then contain a sub folder named "AIVEI3N" which contai
 
 This open folder structure will allow you to make changes directly to the macros, if needed during optimisation, without needing to recompile the .jar.
 
-The AIVEI3N plugin also contains a button to link back to the main AIVE control panel window. You will need to install this plugin from the repo at https://github.com/BenPadman/AIVE for this to work properly.
+The AIVEI3N plugin also contains a button to link back to the main AIVE control panel window. You will need to install this plugin for this to work properly.
 
-In the near future, we will look at getting a proper update site and potentially automating the dependencies.
+An ImageJ update site will be established at some point to allow for easier installation.
 
 ## Hierachy of ImageJ macro structure
 
 The macros used in the analysis of the FIB-SEM dataset are subset into three main parallel processes:
-- Source processing
+- Source image processing
   - Image pre-processing and 3D CLAHE filtering
 - Membrane Prediction
   - Machine Learning using an adapted version of the trainable WEKA segmentation plugin
@@ -60,4 +66,4 @@ A final fouth stage involves the AIVE merge calculation itself and post-processi
   - Image multiplication of segmentation with each of the source and the mebrane prediction. Noise reduction and uncertanty targeted filters as optimised for this dataset.
   Average of result of source and result membrane prediction. Contact overlap reduction to account for uncertainty introduced across immediately adjacent structures.
 
-(Note: additional information on each process can be found in their individual READMEs)
+(Note: additional information on each process can be found in the individual READMEs)
